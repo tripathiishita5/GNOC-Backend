@@ -2,7 +2,8 @@ import express from "express";
 import cors from "cors";
 import { PORT } from "./config/constant.js";
 import dbConnection from "./config/dbConnection.js";
-import e from "cors";
+import cors from "cors";
+import userRouter from "./Routes/userRoute.js";
 
 const app = express();
 
@@ -13,6 +14,8 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
+
+app.use("/user", userRouter);
 
 dbConnection()
   .then(() => {
