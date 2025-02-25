@@ -2,12 +2,16 @@ import express from "express";
 import cors from "cors";
 import { PORT } from "./config/constant.js";
 import dbConnection from "./config/dbConnection.js";
-import cors from "cors";
 import userRouter from "./Routes/userRoute.js";
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

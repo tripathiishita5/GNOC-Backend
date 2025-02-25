@@ -4,7 +4,9 @@ import bcrypt from "bcryptjs";
 export const registerUser = async (req, res) => {
   try {
     const { empId, name, email, password, role } = req.body;
-
+    if (!empId || !name || !email || !password) {
+      return res.status(400).json({ message: "Please enter all fields." });
+    }
     const existingUser = await User.findOne({ empId });
     if (existingUser) {
       return res
