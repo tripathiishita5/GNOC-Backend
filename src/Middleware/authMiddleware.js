@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import { SECRET_KEY } from "../config/constant.js";
 
 export const authenticateUser = (req, res, next) => {
-  const token = req.headers.authorization?.split(" ")[1];
+  const { token } = req.cookies;
 
   if (!token) {
     return res
