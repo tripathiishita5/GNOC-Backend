@@ -3,6 +3,7 @@ import cors from "cors";
 import { PORT } from "./config/constant.js";
 import dbConnection from "./config/dbConnection.js";
 import userRouter from "./users/Routes/userRoute.js";
+import projectRouter from "./projects/Routes/projectRoutes.js";
 import cookieParser from "cookie-parser";
 
 const app = express();
@@ -22,6 +23,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/user", userRouter);
+app.use("/project", projectRouter);
 
 dbConnection()
   .then(() => {
