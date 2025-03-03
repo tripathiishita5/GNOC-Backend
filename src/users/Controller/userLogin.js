@@ -1,7 +1,7 @@
 import User from "../Models/userSchema.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { SECRET_KEY } from "../config/constant.js";
+import { SECRET_KEY } from "../../config/constant.js";
 
 export const loginUser = async (req, res) => {
   try {

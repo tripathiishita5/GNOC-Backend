@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import { PORT } from "./config/constant.js";
 import dbConnection from "./config/dbConnection.js";
-import userRouter from "./Routes/userRoute.js";
+import userRouter from "./users/Routes/userRoute.js";
 import cookieParser from "cookie-parser";
 
 const app = express();
