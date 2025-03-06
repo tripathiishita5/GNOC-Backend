@@ -21,25 +21,50 @@ const projectSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  DiscussionColor: {
+    type: String,
+    enum: ["#FF0000", "#FFFF00", "#00FF00", "#808080"],
+    required: true,
+  },
   PreRequisites: {
     type: String,
+    required: true,
+  },
+  PreRequisitesColor: {
+    type: String,
+    enum: ["#FF0000", "#FFFF00", "#00FF00", "#808080"],
     required: true,
   },
   implementationDeployment: {
     type: String,
     required: true,
   },
+  implementationDeploymentColor: {
+    type: String,
+    enum: ["#FF0000", "#FFFF00", "#00FF00", "#808080"],
+    required: true,
+  },
   review: {
     type: String,
+    required: true,
+  },
+  reviewColor: {
+    type: String,
+    enum: ["#FF0000", "#FFFF00", "#00FF00", "#808080"],
     required: true,
   },
   goLive: {
     type: String,
     required: true,
   },
+  goLiveColor: {
+    type: String,
+    enum: ["#FF0000", "#FFFF00", "#00FF00", "#808080"],
+    required: true,
+  },
   completionDate: {
     type: Date,
-    required: true,
+    default: "not defined",
   },
   status: {
     type: String,

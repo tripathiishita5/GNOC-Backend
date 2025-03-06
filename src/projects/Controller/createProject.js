@@ -8,10 +8,15 @@ export const createProject = async (req, res) => {
       MonitoringProjects,
       enviornment,
       Discussion,
+      DiscussionColor,
       PreRequisites,
+      PreRequisitesColor,
       implementationDeployment,
+      implementationDeploymentColor,
       review,
+      reviewColor,
       goLive,
+      goLiveColor,
       completionDate,
       status,
       remarks,
@@ -26,9 +31,13 @@ export const createProject = async (req, res) => {
       !implementationDeployment ||
       !review ||
       !goLive ||
-      !completionDate ||
       !status ||
-      !remarks
+      !remarks ||
+      !DiscussionColor ||
+      !PreRequisitesColor ||
+      !implementationDeploymentColor ||
+      !reviewColor ||
+      !goLiveColor
     ) {
       return res.status(400).json({ message: "Please enter all fields." });
     }
@@ -47,6 +56,11 @@ export const createProject = async (req, res) => {
       PreRequisites,
       implementationDeployment,
       review,
+      goLiveColor,
+      DiscussionColor,
+      PreRequisitesColor,
+      reviewColor,
+      implementationDeploymentColor,
       goLive,
       completionDate,
       status,
