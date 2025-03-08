@@ -7,6 +7,7 @@ import { selfData } from "../Controller/selfData.js";
 import { logoutUser } from "../Controller/logoutUser.js";
 import { getAllUser } from "../Controller/getAllUser.js";
 import updateUser from "../Controller/updateUser.js";
+import { deleteUser } from "../Controller/deleteUser.js";
 const router = express.Router();
 
 router.post("/register", authenticateUser, isAdmin, registerUser);
@@ -15,5 +16,6 @@ router.get("/profile", authenticateUser, selfData);
 router.post("/logout", logoutUser);
 router.get("/", authenticateUser, getAllUser);
 router.patch("/:id", authenticateUser, isAdmin, updateUser);
+router.delete("/:id", authenticateUser, isAdmin, deleteUser);
 
 export default router;
