@@ -5,7 +5,7 @@ import dbConnection from "./config/dbConnection.js";
 import userRouter from "./users/Routes/userRoute.js";
 import projectRouter from "./projects/Routes/projectRoutes.js";
 import cookieParser from "cookie-parser";
-
+import docRouter from "./docs/Routes/docRoute.js";
 const app = express();
 
 app.use(cookieParser());
@@ -24,6 +24,7 @@ app.get("/", (req, res) => {
 
 app.use("/user", userRouter);
 app.use("/project", projectRouter);
+app.use("/docs", docRouter);
 
 dbConnection()
   .then(() => {
