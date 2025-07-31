@@ -1,6 +1,6 @@
 import alertSchema from "../Models/moneteringSchema.js";
 
-export const creatAlert = async (req, res) => {
+export const createAlert = async (req, res) => {
   try {
     const {
       service,
@@ -13,7 +13,7 @@ export const creatAlert = async (req, res) => {
       resolver,
     } = req.body;
 
-    // Simple validation (optional)
+    // Basic validation
     if (
       !service ||
       !environment ||
@@ -38,6 +38,7 @@ export const creatAlert = async (req, res) => {
       jira,
       resolver,
     });
+
     await alert.save();
 
     res.status(201).json({ success: true, alert });
