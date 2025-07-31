@@ -6,6 +6,7 @@ import userRouter from "./users/Routes/userRoute.js";
 import projectRouter from "./projects/Routes/projectRoutes.js";
 import cookieParser from "cookie-parser";
 import docRouter from "./docs/Routes/docRoute.js";
+import alertRouter from "./moneteringHealth.js/Router/alertRouter.js";
 const app = express();
 
 app.use(cookieParser());
@@ -25,6 +26,7 @@ app.get("/", (req, res) => {
 app.use("/user", userRouter);
 app.use("/project", projectRouter);
 app.use("/docs", docRouter);
+app.use("/alert", alertRouter);
 
 dbConnection()
   .then(() => {
